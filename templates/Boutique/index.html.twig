@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1>Boutique</h1>
+    <div class="categories">
+{% for category in categories %}
+    <div class="category">
+        <p>{{ category.libelle }}</p>
+        <img src="{{ asset(category.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
+        <p>{{ category.texte }}</p>
+        <a  href="{{ path('produits', {idCategory: category.id})}}">Produits en lien</a>
+    </div>
+{% endfor %}
+    </div>
+{% endblock %}

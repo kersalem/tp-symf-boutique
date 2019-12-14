@@ -1,0 +1,19 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+contact:
+    path: /contact
+    controller: App\Controller\DefaultController::contact
+
+boutique:
+    path: /boutique
+    controller: App\Controller\BoutiqueController::index
+
+produits:
+    path: /produits/{idCategory}
+    controller: App\Controller\BoutiqueController::produits
+
+searchProduits:
+    path: /produits/{search}
+    controller: App\Controller\BoutiqueController::searchProduits
