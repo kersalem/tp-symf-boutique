@@ -17,3 +17,11 @@ produits:
 searchProduits:
     path: /produits/{search}
     controller: App\Controller\BoutiqueController::searchProduits
+
+panier:
+    path: /panier
+    controller: App\Controller\PanierController::index
+
+panier.ajouterArticle:
+    path: /panier/{productId}
+    controller: App\Controller\PanierController::panierAjouter
