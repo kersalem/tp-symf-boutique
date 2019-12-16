@@ -33,7 +33,6 @@ class PanierService {
     }
 
 
-
     function ajouterArticle($productId,$libelleProduit,$prixProduit){
         // $this->creationPanier();
         //Si le produit existe déjà on ajoute seulement la quantité
