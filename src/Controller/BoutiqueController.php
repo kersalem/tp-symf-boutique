@@ -2,31 +2,37 @@
 
 
 namespace App\Controller;
-use App\Service\BoutiqueService;
+use App\Entity\Categorie;
+use App\Entity\Produit;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 
 class BoutiqueController extends AbstractController
 {
-    public function index(BoutiqueService $boutique) {
-        $categories = $boutique->findAllCategories();
-        return $this->render("Boutique/index.html.twig", [
-            "categories" =>$categories
-        ]);
+    public function index() {
+
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository(Categorie::class)->findAll();
+
+                return $this->render("Boutique/index.html.twig", [
+                    "categories" =>$categories
+                ]);
     }
 
-    public function produits(BoutiqueService $boutique, int $idCategory) {
-        $produits = $boutique->findProduitsByCategorie($idCategory);
+    public function produits(int $idCategory) {
+
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository(Produit::class)->findByCategorie($idCategory);
+
         return $this->render("Boutique/produits.html.twig", [
-            "produits" =>$produits
+            "produits" =>$product
         ]);
     }
 
-    public function searchProduits(BoutiqueService $boutique, string $search) {
+/*    public function searchProduits(BoutiqueService $boutique, string $search) {
         $produits = $boutique->findProduitsByLibelleOrTexte($search);
         return $this->render("Boutique/produits.html.twig", [
             "produits" =>$produits
         ]);
-    }
+    }*/
 
 }

@@ -14,6 +14,10 @@ produits:
     path: /produits/{idCategory}
     controller: App\Controller\BoutiqueController::produits
 
+testDeBourin:
+    path: /test
+    controller:  App\Controller\DefaultController::testDeBourin
+
 searchProduits:
     path: /produits/{search}
     controller: App\Controller\BoutiqueController::searchProduits
@@ -22,6 +26,6 @@ panier:
     path: /panier
     controller: App\Controller\PanierController::index
 
-panier.ajouterArticle:
-    path: /panier/{productId}
+ajouterArticle:
+    path: /panier/ajouter/{idProduit}/{quantite}
     controller: App\Controller\PanierController::panierAjouter

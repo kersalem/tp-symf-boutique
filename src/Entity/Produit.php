@@ -17,11 +17,6 @@ class Produit
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $idCategorie;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $libelle;
@@ -50,11 +45,6 @@ class Produit
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdCategorie(): ?int
-    {
-        return $this->idCategorie;
     }
 
     public function setIdCategorie(int $idCategorie): self

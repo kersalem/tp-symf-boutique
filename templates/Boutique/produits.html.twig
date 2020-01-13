@@ -9,11 +9,13 @@
                 <img src="{{ asset(produit.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
                 <p>{{ produit.texte }}</p>
                 <p>{{ produit.prix }}</p>
-
-                <form class="example"  action="/panier/{{ produit.id }}" method="post">
+{#                <form class="example"  action="/panier/{{ produit.id }}" method="post">
                     <input type="hidden"  name="id" value={{ produit.id }}>
                     <button type="submit">Ajouter </button>
-                </form>
+                </form>#}
+
+                <a href="/panier/ajouter/{{ produit.id}}/1">Ajouter</a>
+
             </div>
         {% endfor %}
     </div>
