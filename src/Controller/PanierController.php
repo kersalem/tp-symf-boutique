@@ -34,11 +34,29 @@ class PanierController extends AbstractController
 
     }
 
-    public function panierAjouter(PanierService $panierService, $idProduit, $quantite)
+    public function panierAjouter(PanierService $panierService, $idProduit, $quantite=1)
     {
         $panierService->ajouterArticle($idProduit, $quantite);
         return $this->redirectToRoute('panier');
     }
+
+    public function panierEnlever(PanierService $panierService, $idProduit, $quantite=1)
+    {
+        $panierService->enleverProduit($idProduit, $quantite);
+        return $this->redirectToRoute('panier');
+    }
+
+
+    public function panierSupprimerLigne(PanierService $panierService, $idProduit, $quantite=1)
+    {
+        $panierService->supprimerProduit($idProduit, $quantite);
+        return $this->redirectToRoute('panier');
+    }
+
+/*    public function getTotalProduit(PanierService $panierService) {
+        $panierService->getTotal();
+        return $this->redirectToRoute('panier');
+    }*/
 
 
 

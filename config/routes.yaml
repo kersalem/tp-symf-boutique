@@ -27,5 +27,13 @@ panier:
     controller: App\Controller\PanierController::index
 
 ajouterArticle:
-    path: /panier/ajouter/{idProduit}/{quantite}
+    path: /panier/ajouter/{idProduit}
     controller: App\Controller\PanierController::panierAjouter
+
+enleverArticle:
+    path: /panier/enlever/{idProduit}
+    controller: App\Controller\PanierController::panierEnlever
+
+supprimerLigne:
+    path: /panier/supprimerLigne/{idProduit}
+    controller: App\Controller\PanierController::panierSupprimerLigne

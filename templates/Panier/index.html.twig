@@ -8,6 +8,7 @@
                 <th scope="col">Produit</th>
                 <th scope="col">Prix</th>
                 <th scope="col">Quantité</th>
+                <th scope="col">Total/produit</th>
                 <th scope="col">Supprimer</th>
             </tr>
             </thead>
@@ -18,7 +19,23 @@
                 <tr>
                     <td>{{ product.libelle }}</td>
                     <td>{{ product.prix}}</td>
-                    <td>{{ quantity }}</td>
+                    <td>
+                        <a href="{{ path('ajouterArticle', { idProduit:product.id}) }}">
+                            <i> + </i>
+                        </a>
+                        {{ quantity }}
+                        <a href="{{ path('enleverArticle', { idProduit:product.id}) }}">
+                            <i> - </i>
+                        </a>
+                    </td>
+                    <td>
+                        {{ product.prix * quantity }} €
+                    </td>
+                    <td>
+                        <a href="{{ path('supprimerLigne', { idProduit:product.id}) }}">
+                            X
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

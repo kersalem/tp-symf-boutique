@@ -69,7 +69,7 @@ class BoutiqueService {
 
     private $requestStack; // Le service RequestStack qui sera injecté
     // Le catalogue de la boutique, codé en dur dans un tableau associatif
-    private $categories = [
+    /*private $categories = [
         [
             "id" => 1,
             "libelle" => "Fruits",
@@ -161,5 +161,5 @@ class BoutiqueService {
             "visuel" => "images/oreo.jpg",
             "prix" => 2.50
         ],
-    ];
+    ]; */
 }

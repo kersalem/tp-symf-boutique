@@ -14,7 +14,9 @@
                     <button type="submit">Ajouter </button>
                 </form>#}
 
-                <a href="/panier/ajouter/{{ produit.id}}/1">Ajouter</a>
+                <a href="{{ path('ajouterArticle', { idProduit:produit.id}) }}">Ajouter</a>
+
+
 
             </div>
         {% endfor %}
