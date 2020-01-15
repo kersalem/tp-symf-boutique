@@ -2,7 +2,10 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
@@ -17,17 +20,7 @@ class Commande
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $commande;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $id_commande;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
     private $date_commande;
 
@@ -35,6 +28,21 @@ class Commande
      * @ORM\Column(type="string", length=255)
      */
     private $statut;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\LigneCommande", mappedBy="Commande")
+     */
+    private $ligneCommandes;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Usager", inversedBy="commandes")
+     */
+    private $usager;
+
+    public function __construct()
+    {
+        $this->ligneCommandes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -70,7 +78,7 @@ class Commande
         return $this->date_commande;
     }
 
-    public function setDateCommande(string $date_commande): self
+    public function setDateCommande(\DateTimeInterface $date_commande): self
     {
         $this->date_commande = $date_commande;
 
@@ -85,6 +93,49 @@ class Commande
     public function setStatut(string $statut): self
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|LigneCommande[]
+     */
+    public function getLigneCommandes(): Collection
+    {
+        return $this->ligneCommandes;
+    }
+
+    public function addLigneCommande(LigneCommande $ligneCommande): self
+    {
+        if (!$this->ligneCommandes->contains($ligneCommande)) {
+            $this->ligneCommandes[] = $ligneCommande;
+            $ligneCommande->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLigneCommande(LigneCommande $ligneCommande): self
+    {
+        if ($this->ligneCommandes->contains($ligneCommande)) {
+            $this->ligneCommandes->removeElement($ligneCommande);
+            // set the owning side to null (unless already changed)
+            if ($ligneCommande->getCommande() === $this) {
+                $ligneCommande->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUsager(): ?usager
+    {
+        return $this->usager;
+    }
+
+    public function setUsager(?usager $usager): self
+    {
+        $this->usager = $usager;
 
         return $this;
     }

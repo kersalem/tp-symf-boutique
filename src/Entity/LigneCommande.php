@@ -11,20 +11,15 @@ class LigneCommande
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="ligneCommandes")
      */
-    private $id;
+    private $Commande;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Id()
+     * @ORM\ManyToOne(targetEntity="App\Entity\Produit", inversedBy="ligneCommandes")
      */
-    private $id_article;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $id_commande;
+    private $Produit;
 
     /**
      * @ORM\Column(type="integer")
@@ -85,6 +80,30 @@ class LigneCommande
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->Commande;
+    }
+
+    public function setCommande(?Commande $Commande): self
+    {
+        $this->Commande = $Commande;
+
+        return $this;
+    }
+
+    public function getProduit(): ?Produit
+    {
+        return $this->Produit;
+    }
+
+    public function setProduit(?Produit $Produit): self
+    {
+        $this->Produit = $Produit;
 
         return $this;
     }

@@ -37,3 +37,15 @@ enleverArticle:
 supprimerLigne:
     path: /panier/supprimerLigne/{idProduit}
     controller: App\Controller\PanierController::panierSupprimerLigne
+
+usager_index:
+    path: /usager
+    controller: App\Controller\UsagerController::index
+
+usager_new:
+    path: /usager/new
+    controller: App\Controller\UsagerController::new
+
+panier_validation:
+    path: /panier/commande_validation
+    controller: App\Controller\PanierController::panier_validation
