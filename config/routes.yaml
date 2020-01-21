@@ -1,51 +1,103 @@
 index:
-    path: /
+    path: /{_locale}
     controller: App\Controller\DefaultController::index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'en'
 
 contact:
-    path: /contact
+    path: /{_locale}/contact
     controller: App\Controller\DefaultController::contact
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 boutique:
-    path: /boutique
+    path: /{_locale}/boutique
     controller: App\Controller\BoutiqueController::index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 produits:
-    path: /produits/{idCategory}
+    path: /{_locale}/produits/{idCategory}
     controller: App\Controller\BoutiqueController::produits
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 testDeBourin:
-    path: /test
+    path: /{_locale}/test
     controller:  App\Controller\DefaultController::testDeBourin
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 searchProduits:
-    path: /produits/{search}
+    path: /{_locale}/produits/{search}
     controller: App\Controller\BoutiqueController::searchProduits
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 panier:
-    path: /panier
+    path: /{_locale}/panier
     controller: App\Controller\PanierController::index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 ajouterArticle:
-    path: /panier/ajouter/{idProduit}
+    path: /{_locale}/panier/ajouter/{idProduit}
     controller: App\Controller\PanierController::panierAjouter
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 enleverArticle:
-    path: /panier/enlever/{idProduit}
+    path: /{_locale}/panier/enlever/{idProduit}
     controller: App\Controller\PanierController::panierEnlever
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 supprimerLigne:
-    path: /panier/supprimerLigne/{idProduit}
+    path: /{_locale}/panier/supprimerLigne/{idProduit}
     controller: App\Controller\PanierController::panierSupprimerLigne
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 usager_index:
-    path: /usager
+    path: /{_locale}/usager
     controller: App\Controller\UsagerController::index
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 usager_new:
-    path: /usager/new
+    path: /{_locale}/usager/new
     controller: App\Controller\UsagerController::new
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
 
 panier_validation:
-    path: /panier/commande_validation
+    path: /{_locale}/panier/commande_validation
     controller: App\Controller\PanierController::panier_validation
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
