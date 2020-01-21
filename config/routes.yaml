@@ -101,3 +101,4 @@ panier_validation:
         _locale: '%app.supported_locales%'
     defaults:
         _locale: 'fr'
+        
