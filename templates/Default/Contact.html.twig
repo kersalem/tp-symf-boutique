@@ -1,18 +1,27 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>Contact</h1>
-    <form action="#" method="post">
-        <div>
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="user_name">
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="main-div">
+                    <!-- debut du block content !-->
+                    <div class="card col-md-6 offset-3">
+                        <div class="card-header">
+                            <h1><i class="fas fa-comments"></i> Contact</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="card clickable">
+                                <img src="/mi-5/images/iut2_info.png" class="card-img" alt="logo IUT2">
+                                <div class="card-body">
+                                    <h1 class="card-title"><i class="fas fa-code"></i> Licence Pro MI AW</h1>
+                                    <h2 class="card-title"><i class="fab fa-symfony"></i> Module MI5</h2>
+                                    <p><i class="far fa-copyright"></i> Ph. Martin, 2019/20</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="mail">e-mail :</label>
-            <input type="email" id="mail" name="user_mail">
-        </div>
-        <div>
-            <label for="msg">Message :</label>
-            <textarea id="msg" name="user_message"></textarea>
-        </div>
-    </form>
+    </main>
 {% endblock %}

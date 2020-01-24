@@ -17,7 +17,7 @@ class PanierController extends AbstractController
 
     public function index(PanierService $panierService) {
         $panierWithItems = [];
-        $panier          = $panierService->getContenu();
+        $panier = $panierService->getContenu();
         $prixTotal = $panierService->getTotal();
         $totalQuantite = $panierService->getNbProduits();
 
