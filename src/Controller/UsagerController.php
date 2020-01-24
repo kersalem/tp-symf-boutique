@@ -43,7 +43,7 @@ class UsagerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $usager->setPassword($passwordEncoder->encodePassword($usager,$usager->getPassword()));
-          $usager->setRoles(["ROLE_CLIENT"]);
+            $usager->setRoles(["ROLE_CLIENT"]);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($usager);

@@ -18,6 +18,8 @@ class PanierController extends AbstractController
     public function index(PanierService $panierService) {
         $panierWithItems = [];
         $panier          = $panierService->getContenu();
+        $prixTotal = $panierService->getTotal();
+        $totalQuantite = $panierService->getNbProduits();
 
         foreach ($panier as $id => $quantity) {
 
@@ -30,6 +32,8 @@ class PanierController extends AbstractController
             'Panier/index.html.twig',
             [
                 "panier" => $panierWithItems,
+                "prixTotal"=>$prixTotal,
+                "TotalQuantite"=> $totalQuantite
 
             ]
         );
@@ -55,12 +59,6 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('panier');
     }
 
-    /*  public function getTotalProduit(PanierService $panierService) {
-        $panierService->getTotal();
-        return $this->redirectToRoute('panier');
-    } */
-
-
     public function validation(PanierService $panierService, SessionInterface $session){
         $em = $this->getDoctrine()->getManager();
 
@@ -69,10 +67,11 @@ class PanierController extends AbstractController
         $usager = $em->getRepository(Usager::class)->find($id);
         $commande = $panierService->panierToCommande($usager);
 
-        //var_dump($id);
+        var_dump($id);
         return $this->render(
-            'Panier/commande-finalisee.html.twig', [ "commande"=>$commande ]
+            'Panier/commande-finalisee.html.twig', [
+                "commande"=>$commande,
+                ]
         );
-
     }
 }

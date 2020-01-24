@@ -2,6 +2,19 @@
 
 {% block body %}
     <h1 class="mt-4">Mon panier</h1>
+
+    <div>
+        <a href="{{ path('boutique') }}">Retour à la boutique</a>
+    </div>
+
+    {% if panier != null %}
+    <div>
+       Total Panier : {{ prixTotal }} €
+    </div>
+
+    <div>
+        Votre panier contient {{ TotalQuantite }} d'articles
+    </div>
         <table class="table">
             <thead>
             <tr>
@@ -40,10 +53,10 @@
             {% endfor %}
             </tbody>
         </table>
-    <div>
-
-        {% if panier != null %}
             <a href="{{ path('panier_validation') }}"> Valider commande</a>
+    {% else%}
+     <h2>Votre panier est vide</h2>
         {% endif %}
+
     </div>
 {% endblock %}

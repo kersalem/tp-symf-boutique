@@ -83,7 +83,15 @@ class PanierService {
     }
 
     // getNbProduits renvoie le nombre de produits dans le panier
-    //public function getNbProduits() { // à compléter }
+    public function getNbProduits() : int{
+        $nombreTotaProduits = 0;
+
+        foreach ($this->getContenu() as $quantite) {
+            $nombreTotaProduits += $quantite;
+        }
+
+        return $nombreTotaProduits;
+    }
 
 
     // vider vide complètement le panier
@@ -95,8 +103,6 @@ class PanierService {
         public function panierToCommande(Usager $usager) {
 
             $contenu = $this->getContenu();
-
-            $this->logger->debug('2222222222222222222222222');
             if(!empty($contenu)) {
                 $commande = new Commande();
                 $commande->setDateCommande(new \DateTime());
@@ -115,14 +121,12 @@ class PanierService {
                     }
                 }
 
-                $this->logger->debug('333333333333333333333');
                 $this->em->persist($commande);
-
-                $this->logger->debug('ttttttttttttttttttt');
                 $this->em->flush();
                 $this->vider();
 
-                $this->logger->debug('8888888888888');
+//                $this->logger->debug('8888888888888');
+
                 return $commande;
 
             }
