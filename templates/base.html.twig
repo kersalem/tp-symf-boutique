@@ -7,6 +7,12 @@
         <link rel="stylesheet" href="{{ asset('css/projet.css')}}" />
         <link rel="myscripts.js" href="{{ asset('js/bootstrap-4/bootstrap.min.js')}}" />
 
+        <link href="{{ asset ("css/bootstrap4/bootstrap.min.css")}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset ("css/projet.css")}}" rel="stylesheet" type="text/css">
+        <link href="{{ asset ("css/fontawsome-5.all.min.css")}}" rel="stylesheet" type="text/css">
+        <script src="{{ asset ("js/jquery/jquery.slim.min.js")}}"></script>
+        <script src="{{ asset ("js/bootstrap/bootstrap.min.js")}}"></script>
+
         {% block stylesheets %}{% endblock %}
     </head>
     <header>{%  include 'header.html.twig' %}</header>
@@ -16,3 +22,5 @@
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+
+

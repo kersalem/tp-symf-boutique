@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-<h1>Boutique</h1>
-    <div class="categories">
-    
-{% for category in categories %}
-    <div class="category">
-        <p>{{ category.libelle }}</p>
-        <img src="{{ asset(category.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
-        <p>{{ category.texte }}</p>
-        <a  href="{{ path('produits', {idCategory: category.id})}}">Produits en lien</a>
-    </div>
-{% endfor %}
-    </div>
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="main-div">
+                    <div class="card col-md-12">
+                        <div class="card-header">
+                            <h1><i class="fab fa-product-hunt"></i> Rayon "Fruits" : 3 Produit(s)</h1>
+                        </div>
+
+                        <div class="card-body row">
+                        {% for category in categories %}
+                            <div class="col-md-4">
+                                <div class="card clickable" onclick="location = '/mi5/fr/panier/ajouter/3'">
+                                    <p>{{ category.libelle }}</p>
+                                    <img src="{{ asset(category.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
+                                    <p>{{ category.texte }}</p>
+                                    <a  href="{{ path('produits', {idCategory: category.id})}}">Produits en lien</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}

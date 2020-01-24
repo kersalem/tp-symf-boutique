@@ -2,85 +2,88 @@
 
 {% block body %}
     {% if panier != null %}
-        <div class="row">
-            <div class="col-md-10">
-                <div class="main-div">
-                    <div class="card col-md-12">
+        <main role="main" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-div">
+                        <div class="card col-md-12">
 
-                        <div class="card-header">
-                            <h1>{{ TotalQuantite }} article(s) : {{ prixTotal }} €</h1>
-                            <div class="col-md-12 btn-group btn-group-lg" role="group">
-                                <a class="btn btn-primary" href="{{ path('panier_validation') }}">
-                                    Passer la Commande</a>
-                                <a class="btn btn-primary" href="{{ path('boutique') }}">
-                                    Continuer les Courses</a>
+                            <div class="card-header">
+
+                                <h1><i class="fas fa-shopping-cart"></i>  {{ TotalQuantite }} article(s) : {{ prixTotal }} €</h1>
+                                <div class="col-md-12 btn-group btn-group-lg" role="group">
+                                    <a class="btn btn-primary" href="{{ path('panier_validation') }}">
+                                        Passer la Commande</a>
+                                    <a class="btn btn-primary" href="{{ path('boutique') }}">
+                                        Continuer les Courses</a>
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <div class="card-body">
-                            <div class="row">
-                                <table class="table table-striped table-sm table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Produit</th>
-                                        <th scope="col">Prix</th>
-                                        <th scope="col">Quantité</th>
-                                        <th scope="col">Total/produit</th>
-                                        <th scope="col">Supprimer</th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody>
-                                    {% for item in panier %}
-                                        {% set product = item['item'] %}
-                                        {% set quantity = item['quantity'] %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <table class="table table-striped table-sm table-hover">
+                                        <thead>
                                         <tr>
-                                            <td><img src="{{ asset(product.visuel) }}" class="cart-img-produit" ></td>
-                                            <td>{{ product.libelle }}</td>
-                                            <td>{{ product.prix}}</td>
-                                            <td>
-                                                <a href="{{ path('ajouterArticle', { idProduit:product.id}) }}">
-                                                    <i> + </i>
-                                                </a>
-                                                {{ quantity }}
-                                                <a href="{{ path('enleverArticle', { idProduit:product.id}) }}">
-                                                    <i> - </i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                {{ product.prix * quantity }} €
-                                            </td>
-                                            <td>
-                                                <a href="{{ path('supprimerLigne', { idProduit:product.id}) }}">
-                                                    X
-                                                </a>
-                                            </td>
+                                            <th scope="col"></th>
+                                            <th scope="col">Produit</th>
+                                            <th scope="col">Prix</th>
+                                            <th scope="col">Quantité</th>
+                                            <th scope="col">Total/produit</th>
+                                            <th scope="col">Supprimer</th>
                                         </tr>
-                                    {% endfor %}
-                                    </tbody>
+                                        </thead>
 
-                                    <thead>
-                                    <tr>
-                                        <th class="text-right" colspan="4" >
-                                            Total
-                                        </th>
-                                        <th>
-                                            {{ prixTotal }} €
-                                        </th>
-                                        <th>
-                                            X
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                </table>
+                                        <tbody>
+                                        {% for item in panier %}
+                                            {% set product = item['item'] %}
+                                            {% set quantity = item['quantity'] %}
+                                            <tr>
+                                                <td><img src="{{ asset(product.visuel) }}" class="cart-img-produit" ></td>
+                                                <td>{{ product.libelle }}</td>
+                                                <td>{{ product.prix}}</td>
+                                                <td>
+                                                    <a href="{{ path('ajouterArticle', { idProduit:product.id}) }}">
+                                                        <i class="fas fa-minus-square text-muted"></i>
+                                                    </a>
+                                                    {{ quantity }}
+                                                    <a href="{{ path('enleverArticle', { idProduit:product.id}) }}">
+                                                        <i class="fas fa-plus-square text-muted"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    {{ product.prix * quantity }} €
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('supprimerLigne', { idProduit:product.id}) }}">
+                                                        <i class="fas fa-trash text-muted" data-toggle="tooltip" title="" data-placement="right" data-html="true" data-original-title="Vider le Panier"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+                                        <thead>
+                                        <tr>
+                                            <th class="text-right" colspan="4" >
+                                                Total
+                                            </th>
+                                            <th>
+                                                {{ prixTotal }} €
+                                            </th>
+                                            <th>
+                                                <i class="fas fa-trash text-muted" data-toggle="tooltip" title="" data-placement="right" data-html="true" data-original-title="Vider le Panier"></i>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     {% else%}
      <h2>Votre panier est vide</h2>
         {% endif %}

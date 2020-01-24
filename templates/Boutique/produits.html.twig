@@ -1,24 +1,39 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-    <h1>Produits</h1>
-    <div class="produits">
-        {% for produit in produits %}
-            <div class="produit">
-                <p>{{ produit.libelle }}</p>
-                <img src="{{ asset(produit.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
-                <p>{{ produit.texte }}</p>
-                <p>{{ produit.prix }}</p>
-{#                <form class="example"  action="/panier/{{ produit.id }}" method="post">
-                    <input type="hidden"  name="id" value={{ produit.id }}>
-                    <button type="submit">Ajouter </button>
-                </form>#}
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="main-div">
+                    <div class="card col-md-12">
+                        <div class="card-header">
+                            <h1><i class="fab fa-product-hunt"></i> Rayon "Fruits" : 3 Produit(s)</h1>
+                        </div>
 
-                <a href="{{ path('ajouterArticle', { idProduit:produit.id}) }}">Ajouter</a>
+                        <div class="card-body row">
 
-
-
-            </div>
-        {% endfor %}
-    </div>
+                            {% for produit in produits %}
+                                <div class="col-md-4">
+                                    <div class="card clickable" onclick="{{ path('ajouterArticle', { idProduit:produit.id}) }}">
+{#                                        <a href="{{ path('ajouterArticle', { idProduit:produit.id}) }}">#}
+                                            <img src="{{ asset(produit.visuel) }}" class="card-img-top"> {# {{ asset("images/carottes.jpg") }} #}
+                                            <div class="card-body">
+                                                <h4 class="card-title">{{ produit.libelle }}</h4>
+                                                <p class="card-text">{{ produit.texte }}</p>
+                                                <h2>
+                                                    <span class="badge badge-primary">
+                                                        <i class="fas fa-cart-plus"></i>
+                                                        {{ produit.prix }} €
+                                                    </span>
+                                                </h2>
+                                            </div>
+{#                                        </a>#}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </main>
 {% endblock %}
