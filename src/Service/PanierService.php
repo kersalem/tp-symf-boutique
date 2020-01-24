@@ -96,6 +96,7 @@ class PanierService {
 
             $contenu = $this->getContenu();
 
+            $this->logger->debug('2222222222222222222222222');
             if(!empty($contenu)) {
                 $commande = new Commande();
                 $commande->setDateCommande(new \DateTime());
@@ -112,12 +113,18 @@ class PanierService {
                         $ligneCommande->setCommande($commande);
                         $this->em->persist($ligneCommande);
                     }
-            }
+                }
 
+                $this->logger->debug('333333333333333333333');
                 $this->em->persist($commande);
+
+                $this->logger->debug('ttttttttttttttttttt');
                 $this->em->flush();
                 $this->vider();
 
-        }
+                $this->logger->debug('8888888888888');
+                return $commande;
+
+            }
         }
 }

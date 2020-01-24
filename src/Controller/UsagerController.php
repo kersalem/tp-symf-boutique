@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Usager;
 use App\Form\UsagerType;
 use App\Repository\UsagerRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,20 +19,32 @@ class UsagerController extends AbstractController
 {
 
     const USAGER_SESSION = 'usager';
-    public function index(UsagerRepository $usagerRepository): Response
+    public function index(UsagerRepository $usagerRepository, SessionInterface $session): Response
     {
+        $idUserSession = $session->get(self::USAGER_SESSION);
+        $usager = null;
+        if($idUserSession) {
+            $usager = $usagerRepository->find($idUserSession);
+        }
+
+        $usagers = $usagerRepository->findAll();
         return $this->render('usager/index.html.twig', [
-            'usagers' => $usagerRepository->findAll(),
+            'usager' => $usager,
+            'usagers' => $usagers,
         ]);
     }
 
-    public function new(Request $request, SessionInterface $session): Response
+    public function new(Request $request, SessionInterface $session, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $usager = new Usager();
         $form = $this->createForm(UsagerType::class, $usager);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $usager->setPassword($passwordEncoder->encodePassword($usager,$usager->getPassword()));
+          $usager->setRoles(["ROLE_CLIENT"]);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($usager);
             $entityManager->flush();
@@ -44,7 +57,7 @@ class UsagerController extends AbstractController
             exit;*/
 
 
-            return $this->redirectToRoute('usager_index');
+            return $this->redirectToRoute('usager_accueil');
 
         }
 

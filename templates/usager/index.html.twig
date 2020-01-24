@@ -5,6 +5,10 @@
 {% block body %}
     <h1>Usager index</h1>
 
+    {% if usager != null %}
+        <h2>Usager connecté : {{ usager.prenom }} {{ usager.nom }}</h2>
+    {% endif %}
+
     <table class="table">
         <thead>
             <tr>
@@ -35,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('usager_new') }}">Create new</a>
+    <a href="{{ path('usager_inscription') }}">Create new</a>
 {% endblock %}

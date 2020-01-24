@@ -61,20 +61,17 @@ class PanierController extends AbstractController
     } */
 
 
-    public function panier_validation(PanierService $panierService, SessionInterface $session){
+    public function validation(PanierService $panierService, SessionInterface $session){
         $em = $this->getDoctrine()->getManager();
 
         $id = $session->get("usager");
-        dump($id);
 
         $usager = $em->getRepository(Usager::class)->find($id);
+        $commande = $panierService->panierToCommande($usager);
 
-        dump($usager);
-        $panierService->panierToCommande($usager);
-        //return $this->redirectToRoute('panier');
-
+        //var_dump($id);
         return $this->render(
-            'Panier/commande-finalisee.html.twig'
+            'Panier/commande-finalisee.html.twig', [ "commande"=>$commande ]
         );
 
     }

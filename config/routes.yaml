@@ -78,7 +78,7 @@ supprimerLigne:
     defaults:
         _locale: 'fr'
 
-usager_index:
+usager_accueil:
     path: /{_locale}/usager
     controller: App\Controller\UsagerController::index
     requirements:
@@ -86,7 +86,7 @@ usager_index:
     defaults:
         _locale: 'fr'
 
-usager_new:
+usager_inscription:
     path: /{_locale}/usager/new
     controller: App\Controller\UsagerController::new
     requirements:
@@ -96,9 +96,24 @@ usager_new:
 
 panier_validation:
     path: /{_locale}/panier/commande_validation
-    controller: App\Controller\PanierController::panier_validation
+    controller: App\Controller\PanierController::validation
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
         _locale: 'fr'
-        
+
+login:
+    path: /{_locale}/login
+    controller : App\Controller\SecurityController::login
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'
+
+app_logout:
+    path: /{_locale}/logout
+    methods: GET
+    requirements:
+        _locale: '%app.supported_locales%'
+    defaults:
+        _locale: 'fr'

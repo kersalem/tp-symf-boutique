@@ -14,6 +14,18 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('panier')}}">{{ 'Panier' | trans }}</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('login')}}">{{ 'Connexion' | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('usager_accueil')}}">{{ 'user' | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('usager_inscription')}}">{{ 'Inscription' | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('usager_accueil')}}">{{ 'Mon compte' | trans }}</a>
+            </li>
         </ul>
         <form class="example" action="/produits/">
             <input type="text" placeholder="Search.." name="search">

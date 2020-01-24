@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="mt-4">Commande validée</h1>
 
+    <h1 class="mt-4">Commande validée</h1>
+    {% if commande != null %}
+        <h2 class="mt-4">{{ commande.id }}</h2>
+    {% endif %}
 
 {% endblock %}

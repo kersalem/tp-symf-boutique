@@ -4,6 +4,7 @@ namespace App\Security;
 
 use App\Entity\Usager;
 use Doctrine\ORM\EntityManagerInterface;
+use Monolog\Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -82,11 +83,14 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
+
             return new RedirectResponse($targetPath);
         }
 
+//        $this->logger->debug('4444444444444444444444');
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('usager_accueil'));
     }
 
     protected function getLoginUrl()
@@ -94,3 +98,4 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         return $this->urlGenerator->generate('app_login');
     }
 }
+

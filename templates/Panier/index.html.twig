@@ -41,6 +41,9 @@
             </tbody>
         </table>
     <div>
-        <a href="{{ path('panier_validation') }}"> Valider commande</a>
+
+        {% if panier != null %}
+            <a href="{{ path('panier_validation') }}"> Valider commande</a>
+        {% endif %}
     </div>
 {% endblock %}
