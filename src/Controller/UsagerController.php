@@ -83,6 +83,7 @@ class UsagerController extends AbstractController
         return $this->render('usager/new.html.twig', [
             'usager' => $usager,
             'form' => $form->createView(),
+            'usagerExist' => false,
         ]);
     }
 }
