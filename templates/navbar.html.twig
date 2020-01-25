@@ -35,8 +35,8 @@
 </nav>#}
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/mi5/">
-        <i class="fas fa-home"></i>Ma boutique.com</a>
+    <a class="navbar-brand" href="{{ path('index')}}">
+        <i class="fas fa-home"></i> Ma boutique.com</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,11 +54,12 @@
                 <a class="nav-link" href="{{ path('panier')}}">
                     <i class="fas fa-comments"></i> {{ 'Panier' | trans }}</a>
             </li>
-            <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> Connexion</span>
 
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> Connexion</a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                     <a class="dropdown-item " href="{{ path('usager_inscription')}}">
                         {{ 'Inscription' | trans }}
@@ -80,6 +81,7 @@
                         Déconnexion</a>#}
                 </div>
             </li>
+
         </ul>
         {#<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="searchString" type="text" placeholder="Chercher Produits..." aria-label="Search">

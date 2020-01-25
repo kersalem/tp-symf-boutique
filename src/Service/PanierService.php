@@ -90,6 +90,8 @@ class PanierService {
             $nombreTotaProduits += $quantite;
         }
 
+        var_dump($nombreTotaProduits);
+
         return $nombreTotaProduits;
     }
 
@@ -126,7 +128,6 @@ class PanierService {
                 $this->vider();
 
 //                $this->logger->debug('8888888888888');
-
                 return $commande;
 
             }

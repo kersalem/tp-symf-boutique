@@ -52,12 +52,16 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('panier');
     }
 
-
-    public function panierSupprimerLigne(PanierService $panierService, $idProduit, $quantite=1)
-    {
-        $panierService->supprimerProduit($idProduit, $quantite);
+    public function supprimerPanier(PanierService $panierService) {
+        $panierService->vider();
         return $this->redirectToRoute('panier');
     }
+
+//    public function panierSupprimerLigne(PanierService $panierService, $idProduit, $quantite=1)
+//    {
+//        $panierService->supprimerProduit($idProduit, $quantite);
+//        return $this->redirectToRoute('panier');
+//    }
 
     public function validation(PanierService $panierService, SessionInterface $session){
         $em = $this->getDoctrine()->getManager();

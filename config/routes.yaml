@@ -78,6 +78,16 @@ supprimerLigne:
     defaults:
         _locale: 'fr'
 
+
+supprimer:
+   path: /{_locale}/panier/suppressionPanier
+   controller: App\Controller\PanierController::supprimerPanier
+   requirements:
+       _locale: '%app.supported_locales%'
+   defaults:
+       _locale: 'fr'
+
+
 usager_accueil:
     path: /{_locale}/usager
     controller: App\Controller\UsagerController::index

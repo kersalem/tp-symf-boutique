@@ -72,7 +72,9 @@
                                                 {{ prixTotal }} €
                                             </th>
                                             <th>
-                                                <i class="fas fa-trash text-muted" data-toggle="tooltip" title="" data-placement="right" data-html="true" data-original-title="Vider le Panier"></i>
+                                                <a href="{{ path('supprimer') }}">
+                                                    <i class="fas fa-trash text-muted" data-toggle="tooltip" title="" data-placement="right" data-html="true" data-original-title="Vider le Panier"></i>
+                                                </a>
                                             </th>
                                         </tr>
                                         </thead>

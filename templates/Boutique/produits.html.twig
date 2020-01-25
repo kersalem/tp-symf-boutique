@@ -5,35 +5,37 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="main-div">
-                    <div class="card col-md-12">
-                        <div class="card-header">
-                            <h1><i class="fab fa-product-hunt"></i> Rayon "Fruits" : 3 Produit(s)</h1>
-                        </div>
+                    <div class="main-div">
+                        <div class="card col-md-12">
+                            <div class="card-header">
+                                <h1><i class="fab fa-product-hunt"></i> Rayon "Fruits" : 3 Produit(s)</h1>
+                            </div>
 
-                        <div class="card-body row">
-
-                            {% for produit in produits %}
-                                <div class="col-md-4">
-                                    <div class="card clickable" onclick="{{ path('ajouterArticle', { idProduit:produit.id}) }}">
-{#                                        <a href="{{ path('ajouterArticle', { idProduit:produit.id}) }}">#}
-                                            <img src="{{ asset(produit.visuel) }}" class="card-img-top"> {# {{ asset("images/carottes.jpg") }} #}
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{ produit.libelle }}</h4>
-                                                <p class="card-text">{{ produit.texte }}</p>
-                                                <h2>
-                                                    <span class="badge badge-primary">
-                                                        <i class="fas fa-cart-plus"></i>
-                                                        {{ produit.prix }} €
-                                                    </span>
-                                                </h2>
-                                            </div>
-{#                                        </a>#}
+                            <div class="card-body row">
+                                {% for produit in produits %}
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                                <img src="{{ asset(produit.visuel) }}" class="card-img-top"> {# {{ asset("images/carottes.jpg") }} #}
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{{ produit.libelle }}</h4>
+                                                    <p class="card-text">{{ produit.texte }}</p>
+                                                    <h2>
+                                                        <a href="{{ path('ajouterArticle', { idProduit:produit.id}) }}">
+                                                        <span class="badge badge-primary">
+                                                            <i class="fas fa-cart-plus"></i>
+                                                            {{ produit.prix }} €
+                                                        </span>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                        </div>
                                     </div>
-                                </div>
-                            {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
+             </div>
         </div>
     </main>
 {% endblock %}

@@ -7,18 +7,24 @@
                 <div class="main-div">
                     <div class="card col-md-12">
                         <div class="card-header">
-                            <h1><i class="fab fa-product-hunt"></i> Rayon "Fruits" : 3 Produit(s)</h1>
+                            <h1><i class="fab fa-product-hunt"></i> Boutique : 3 Rayon(s)</h1>
                         </div>
 
                         <div class="card-body row">
                         {% for category in categories %}
                             <div class="col-md-4">
-                                <div class="card clickable" onclick="location = '/mi5/fr/panier/ajouter/3'">
-                                    <p>{{ category.libelle }}</p>
-                                    <img src="{{ asset(category.visuel) }}"> {# {{ asset("images/carottes.jpg") }} #}
-                                    <p>{{ category.texte }}</p>
-                                    <a  href="{{ path('produits', {idCategory: category.id})}}">Produits en lien</a>
+                                <div class="card">
+                                    <img src="{{ asset(category.visuel) }}" class="card-img-top"> {# {{ asset("images/carottes.jpg") }} #}
+                                    <h4 class="card-title">{{ category.libelle }}</h4>
+                                    <p class="card-text">{{ category.texte }}</p>
                                 </div>
+                                <h3>
+                                    <a href="{{ path('produits', {idCategory: category.id})}}">
+                                        <span class="badge badge-primary">
+                                                Produits en lien
+                                        </span>
+                                    </a>
+                                </h3>
                             </div>
                         {% endfor %}
                     </div>
