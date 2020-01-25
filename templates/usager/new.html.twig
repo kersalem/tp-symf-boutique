@@ -7,5 +7,9 @@
 
     {{ include('usager/_form.html.twig') }}
 
+    {% if  usagerExist %}
+        Vous etes déjà inscrit
+    {% endif %}
+
     <a href="{{ path('usager_accueil') }}">back to list</a>
 {% endblock %}

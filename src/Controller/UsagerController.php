@@ -36,16 +36,35 @@ class UsagerController extends AbstractController
 
     public function new(Request $request, SessionInterface $session, UserPasswordEncoderInterface $passwordEncoder): Response
     {
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        // Créer nvelle entité usager
         $usager = new Usager();
+        // creer form à partir de la classe & associer form avec var usager
         $form = $this->createForm(UsagerType::class, $usager);
+        // VOir dans contenu request si form est rempli si oui rempli usager avec val form
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $email = $usager->getEmail();
+            $usagerRepository = $entityManager->getRepository(Usager::class);
+            $usagerExist = $usagerRepository->findBy(['email' => $email]);
+
+            if($usagerExist != null) {
+
+                return $this->render('usager/new.html.twig', [
+                    'usager' => $usager,
+                    'form' => $form->createView(),
+                    'usagerExist' =>$usagerExist
+                ]);
+            }
 
             $usager->setPassword($passwordEncoder->encodePassword($usager,$usager->getPassword()));
             $usager->setRoles(["ROLE_CLIENT"]);
 
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($usager);
             $entityManager->flush();
 
