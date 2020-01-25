@@ -22,6 +22,26 @@ boutique:
     defaults:
         _locale: 'fr'
 
+categorie:
+    path: /{_locale}/admin/categorie_index
+    controller: App\Controller\CategorieController:index
+
+categorie_edit:
+    path: /{_locale}/admin/categorie_edit/{id}
+    controller: App\Controller\CategorieController:edit
+
+categorie_new:
+    path: /{_locale}/admin/categorie_new
+    controller: App\Controller\CategorieController:new
+
+categorie_show:
+    path: /{_locale}/admin/categorie_show/{id}
+    controller: App\Controller\CategorieController:show
+
+categorie_delete:
+    path: /{_locale}/admin/categorie_delete/{id}
+    controller: App\Controller\CategorieController:delete
+
 produits:
     path: /{_locale}/produits/{idCategory}
     controller: App\Controller\BoutiqueController::produits
@@ -127,3 +147,6 @@ app_logout:
         _locale: '%app.supported_locales%'
     defaults:
         _locale: 'fr'
+
+
+
