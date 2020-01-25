@@ -19,6 +19,15 @@ class LigneCommandeRepository extends ServiceEntityRepository
         parent::__construct($registry, LigneCommande::class);
     }
 
+/*    public function findProductBienVendu($value)
+    {
+        $variable = 'coucou';
+        return $this->getEntityManager()->createQuery('SELECT * FROM  APP\Entities\Produit e WHERE e.name = ?1')->setParameter(1, $variable)->execute();
+        return $this->createQueryBuilder('l')->getQuery();
+        return $this->createQueryBuilder('l')->select("SUM(l.quantite) as quant")->groupBy('produit')->where('l.quant > 4')->getQuery()->execute();
+
+    }*/
+
     // /**
     //  * @return LigneCommande[] Returns an array of LigneCommande objects
     //  */
