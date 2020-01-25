@@ -22,9 +22,12 @@ class BoutiqueController extends AbstractController
 
         $em = $this->getDoctrine()->getManager();
         $product = $em->getRepository(Produit::class)->findByCategorie($idCategory);
+        $categorie = $em->getRepository(Categorie::class)->find($idCategory);
+
 
         return $this->render("Boutique/produits.html.twig", [
-            "produits" =>$product
+            "produits" =>$product,
+            "categorie" =>$categorie
         ]);
     }
 
