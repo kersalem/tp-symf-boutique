@@ -21,6 +21,7 @@ class PanierController extends AbstractController
         $prixTotal = $panierService->getTotal();
         $totalQuantite = $panierService->getNbProduits();
 
+
         foreach ($panier as $id => $quantity) {
 
             $em = $this->getDoctrine()->getManager();
@@ -67,11 +68,19 @@ class PanierController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         $id = $session->get("usager");
+        $commande = null;
 
-        $usager = $em->getRepository(Usager::class)->find($id);
-        $commande = $panierService->panierToCommande($usager);
+        if(! $this->isGranted('ROLE_CLIENT')){
+            return $this->redirectToRoute('panier');
+        }
 
-        var_dump($id);
+        if($id != null) {
+            $usager = $em->getRepository(Usager::class)->find($id);
+            $commande = $panierService->panierToCommande($usager);
+            var_dump($usager);
+
+        }
+
         return $this->render(
             'Panier/commande-finalisee.html.twig', [
                 "commande"=>$commande,

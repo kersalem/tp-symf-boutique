@@ -112,7 +112,7 @@ panier_validation:
     defaults:
         _locale: 'fr'
 
-login:
+app_login:
     path: /{_locale}/login
     controller : App\Controller\SecurityController::login
     requirements:

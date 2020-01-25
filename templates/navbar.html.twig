@@ -54,6 +54,16 @@
                 <a class="nav-link" href="{{ path('panier')}}">
                     <i class="fas fa-comments"></i> {{ 'Panier' | trans }}</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_login')}}">{{ 'Connexion' | trans }}</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('usager_inscription')}}">{{ 'Inscription' | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('usager_accueil')}}">{{ 'Mon compte' | trans }}</a>
+            </li>
 
             <li class="nav-item dropdown">
                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,7 +75,7 @@
                         {{ 'Inscription' | trans }}
                     </a>
 
-                    <a class="dropdown-item" href="{{ path('login')}}">
+                    <a class="dropdown-item" href="{{ path('app_login')}}">
                        {{ 'Connexion' | trans }}
                     </a>
 

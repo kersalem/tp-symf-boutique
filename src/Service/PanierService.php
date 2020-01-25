@@ -127,7 +127,7 @@ class PanierService {
                 $this->em->flush();
                 $this->vider();
 
-//                $this->logger->debug('8888888888888');
+                // $this->logger->debug('8888888888888');
                 return $commande;
 
             }
