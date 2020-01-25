@@ -90,8 +90,6 @@ class PanierService {
             $nombreTotaProduits += $quantite;
         }
 
-        var_dump($nombreTotaProduits);
-
         return $nombreTotaProduits;
     }
 

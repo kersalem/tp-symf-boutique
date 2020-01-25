@@ -47,22 +47,22 @@ class PanierController extends AbstractController
         return $this->redirectToRoute('panier');
     }
 
-    public function panierEnlever(PanierService $panierService, $idProduit, $quantite=1)
+/*    public function panierEnlever(PanierService $panierService, $idProduit, $quantite=1)
     {
         $panierService->enleverProduit($idProduit, $quantite);
         return $this->redirectToRoute('panier');
-    }
+    }*/
 
     public function supprimerPanier(PanierService $panierService) {
         $panierService->vider();
         return $this->redirectToRoute('panier');
     }
 
-//    public function panierSupprimerLigne(PanierService $panierService, $idProduit, $quantite=1)
-//    {
-//        $panierService->supprimerProduit($idProduit, $quantite);
-//        return $this->redirectToRoute('panier');
-//    }
+    public function panierSupprimerLigne(PanierService $panierService, $idProduit, $quantite=1)
+    {
+        $panierService->supprimerProduit($idProduit, $quantite);
+        return $this->redirectToRoute('panier');
+    }
 
     public function validation(PanierService $panierService, SessionInterface $session){
         $em = $this->getDoctrine()->getManager();
@@ -77,8 +77,6 @@ class PanierController extends AbstractController
         if($id != null) {
             $usager = $em->getRepository(Usager::class)->find($id);
             $commande = $panierService->panierToCommande($usager);
-            var_dump($usager);
-
         }
 
         return $this->render(

@@ -50,6 +50,26 @@ produits:
     defaults:
         _locale: 'fr'
 
+produit:
+  path: /{_locale}/admin/produit_index
+  controller: App\Controller\ProduitController:index
+
+produit_edit:
+  path: /{_locale}/admin/produit_edit/{id}
+  controller: App\Controller\ProduitController:edit
+
+produit_new:
+  path: /{_locale}/admin/produit_new
+  controller: App\Controller\ProduitController:new
+
+produit_show:
+  path: /{_locale}/admin/produit_show/{id}
+  controller: App\Controller\ProduitController:show
+
+produit_delete:
+  path: /{_locale}/admin/produit_delete/{id}
+  controller: App\Controller\ProduitController:delete
+
 testDeBourin:
     path: /{_locale}/test
     controller:  App\Controller\DefaultController::testDeBourin

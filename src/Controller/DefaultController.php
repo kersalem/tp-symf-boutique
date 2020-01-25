@@ -129,7 +129,6 @@ class DefaultController extends AbstractController
        $em -> persist ($categorieEntity);
    }
   // $em->flush();
-    var_dump($categorieEntity);
     foreach($produits as $produit) {
         $produitEntity = new Produit();
 

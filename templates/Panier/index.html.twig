@@ -48,11 +48,11 @@
                                                 <td>{{ product.libelle }}</td>
                                                 <td>{{ product.prix}}</td>
                                                 <td>
-                                                    <a href="{{ path('ajouterArticle', { idProduit:product.id}) }}">
+                                                    <a href="{{ path('enleverArticle', { idProduit:product.id}) }}">
                                                         <i class="fas fa-minus-square text-muted"></i>
                                                     </a>
                                                     {{ quantity }}
-                                                    <a href="{{ path('enleverArticle', { idProduit:product.id}) }}">
+                                                    <a href="{{ path('ajouterArticle', { idProduit:product.id}) }}">
                                                         <i class="fas fa-plus-square text-muted"></i>
                                                     </a>
                                                 </td>
