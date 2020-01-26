@@ -47,16 +47,18 @@
                     <i class="fas fa-store"></i> {{ 'Boutique' | trans }}</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ path('panier')}}">
+                    <i class="fas fa-comments"></i> {{ 'Panier' | trans }}</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ path('contact')}}">
                     <i class="fas fa-shopping-cart"></i> {{ 'Contact' | trans }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('panier')}}">
-                    <i class="fas fa-comments"></i> {{ 'Panier' | trans }}</a>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_login')}}">{{ 'Connexion' | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_logout')}}">{{ 'Déconnexion' | trans }}</a>
             </li>
 
             <li class="nav-item">
@@ -65,7 +67,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('usager_accueil')}}">{{ 'Mon compte' | trans }}</a>
             </li>
-{#            {% if not app.user %}#}
+            {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('categorie')}}">{{ 'Gestion catégories' | trans }}</a>
                 </li>
@@ -73,7 +75,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('produit')}}">{{ 'Gestion produits' | trans }}</a>
                 </li>
-           {# {% endif %}#}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('usager_accueil')}}">{{ 'Liste utilisateurs' | trans }}</a>
+                </li>
+           {% endif %}
             <li class="nav-item dropdown">
                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user"></i> Connexion</a>
