@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Mon compte' | trans }}{% endblock %}
+
+{% block body %}
+
+    <main role="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="main-div">
+                    <div class="card col-md-12">
+                        <p> Nom : {{ usager.prenom }}</p>
+                        <p> Prénom : {{ usager.nom }}</p>
+                        <p> Email : {{ usager.email }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
