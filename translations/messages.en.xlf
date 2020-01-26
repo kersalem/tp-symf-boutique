@@ -114,7 +114,7 @@
         <target>Delete</target>
       </trans-unit>
       <trans-unit id="7XW1rod" resname="Validated order">
-        <source>Commande validée</source>
+        <source>Validated order</source>
         <target>Validated order</target>
       </trans-unit>
       <trans-unit id="Yan2u78" resname="Nous traiterons votre demande dans les plus brefs délais.">
@@ -124,6 +124,54 @@
       <trans-unit id="icDKLD7" resname="Boutique.com vous remercie de votre commande">
         <source>Boutique.com vous remercie de votre commande</source>
         <target>Boutique.com thanks you for your order</target>
+      </trans-unit>
+      <trans-unit id="kljm8Fx" resname="Connectez-vous">
+        <source>Connectez-vous</source>
+        <target>Log on to</target>
+      </trans-unit>
+      <trans-unit id="qAuHiPw" resname="est connecté">
+        <source>est connecté</source>
+        <target>is connected</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="yrFEeRj" resname="Se souvenir de moi">
+        <source>Se souvenir de moi</source>
+        <target>Remember me</target>
+      </trans-unit>
+      <trans-unit id="TjbJk.n" resname="Nos Rayons">
+        <source>Nos Rayons</source>
+        <target>Shelves</target>
+      </trans-unit>
+      <trans-unit id="P.vD2nH" resname="Commande validée">
+        <source>Commande validée</source>
+        <target>Validated order</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="nYE_eDo" resname="Liste utilisateurs">
+        <source>Liste utilisateurs</source>
+        <target>User list</target>
+      </trans-unit>
+      <trans-unit id="ib_TA9H" resname="Nouveau membre">
+        <source>Nouveau membre</source>
+        <target>New member</target>
+      </trans-unit>
+      <trans-unit id="lnH2VjJ" resname="Nouveau Membre : Inscription">
+        <source>Nouveau Membre : Inscription</source>
+        <target>New member : registration</target>
+      </trans-unit>
+      <trans-unit id="rfeQM2w" resname="Vous etes déjà inscrit, connectez-vous">
+        <source>Vous etes déjà inscrit, connectez-vous</source>
+        <target>You are already registered, please log in.</target>
       </trans-unit>
     </body>
   </file>

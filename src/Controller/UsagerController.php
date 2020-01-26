@@ -12,8 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
-
+use App\Entity\User;
+use App\Form\UserType;
+use App\Repository\UserRepository;
 
 
 class UsagerController extends AbstractController
@@ -36,11 +37,19 @@ class UsagerController extends AbstractController
         ]);
     }
 
-    public function monCompte(UsagerRepository $usagerRepository, SessionInterface $session): Response
+    public function monCompte(Request $request): Response
     {
-        return $this->render('usager/myAccount.html.twig', [
+          return $this->render('usager/myAccount.html.twig', [
             'usager' => $this->getUser(),
-        ]);
+          ]);
+
+        /* $em = $this->getDoctrine()->getManager();
+        $commandes = $em->getRepository(Commande::class)
+           ->findBy(['usager' => $this->getUsager()]);
+        return $this->render('usager/myAccount.html.twig', [
+            'usager' => $this->getUsager(),
+            'commandes' => $commandes,
+        ]);*/
     }
 
     public function new(Request $request, SessionInterface $session, UserPasswordEncoderInterface $passwordEncoder): Response

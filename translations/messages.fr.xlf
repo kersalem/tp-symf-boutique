@@ -114,7 +114,7 @@
         <target>Supprimer</target>
       </trans-unit>
       <trans-unit id="7XW1rod" resname="Validated order">
-        <source>Commande validée</source>
+        <source>Validated order</source>
         <target>Commande validée</target>
       </trans-unit>
       <trans-unit id="Yan2u78" resname="Nous traiterons votre demande dans les plus brefs délais.">
@@ -124,6 +124,54 @@
       <trans-unit id="icDKLD7" resname="Boutique.com vous remercie de votre commande">
         <source>Boutique.com vous remercie de votre commande</source>
         <target>Boutique.com vous remercie de votre commande</target>
+      </trans-unit>
+      <trans-unit id="kljm8Fx" resname="Connectez-vous">
+        <source>Connectez-vous</source>
+        <target>Connectez-vous</target>
+      </trans-unit>
+      <trans-unit id="qAuHiPw" resname="est connecté">
+        <source>est connecté</source>
+        <target>est connecté</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="yrFEeRj" resname="Se souvenir de moi">
+        <source>Se souvenir de moi</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="TjbJk.n" resname="Nos Rayons">
+        <source>Nos Rayons</source>
+        <target>Nos Rayons</target>
+      </trans-unit>
+      <trans-unit id="P.vD2nH" resname="Commande validée">
+        <source>Commande validée</source>
+        <target>Commande validée</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="nYE_eDo" resname="Liste utilisateurs">
+        <source>Liste utilisateurs</source>
+        <target>Liste utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="ib_TA9H" resname="Nouveau membre">
+        <source>Nouveau membre</source>
+        <target>Nouveau membre</target>
+      </trans-unit>
+      <trans-unit id="lnH2VjJ" resname="Nouveau Membre : Inscription">
+        <source>Nouveau Membre : Inscription</source>
+        <target>Nouveau Membre : Inscription</target>
+      </trans-unit>
+      <trans-unit id="rfeQM2w" resname="Vous etes déjà inscrit, connectez-vous">
+        <source>Vous etes déjà inscrit, connectez-vous</source>
+        <target>Vous etes déjà inscrit, connectez-vous</target>
       </trans-unit>
     </body>
   </file>
