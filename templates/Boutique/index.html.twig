@@ -17,14 +17,14 @@
                                     <img src="{{ asset(category.visuel) }}" class="card-img-top"> {# {{ asset("images/carottes.jpg") }} #}
                                     <h4 class="card-title">{{ category.libelle }}</h4>
                                     <p class="card-text">{{ category.texte }}</p>
-                                </div>
-                                <h3>
-                                    <a href="{{ path('produits', {idCategory: category.id})}}">
+                                    <h3>
+                                        <a href="{{ path('produits', {idCategory: category.id})}}">
                                         <span class="badge badge-primary">
                                                 {{ 'Produit en lien' | trans }}
                                         </span>
-                                    </a>
-                                </h3>
+                                        </a>
+                                    </h3>
+                                </div>
                             </div>
                         {% endfor %}
                     </div>

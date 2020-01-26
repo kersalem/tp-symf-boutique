@@ -25,8 +25,8 @@
                 <td>{{ produit.visuel }}</td>
                 <td>{{ produit.prix }}</td>
                 <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('produit_new') }}">totoCreate new</a>
+    <a class="btn btn-primary" href="{{ path('produit_new') }}">Create new</a>
 {% endblock %}

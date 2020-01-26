@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Usager index{% endblock %}
+{% block title %}Liste utilisateurs{% endblock %}
 
 {% block body %}
     <h1>Usager index</h1>
@@ -38,5 +38,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('usager_inscription') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('usager_inscription') }}">Create new</a>
 {% endblock %}

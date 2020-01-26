@@ -21,11 +21,8 @@
                             </div>
                             <div class="form-group">
                             {% if  usagerExist %}
-                                    {{ 'Vous etes déjà inscrit' | trans }}
+                                <a href="{{ path('app_login') }}"> {{ 'Vous etes déjà inscrit, connectez-vous' | trans }}</a>
                                 {% endif %}
-                            </div>
-                            <div class="form-group">
-                                 <a href="{{ path('app_login') }}">{{ 'Vous etes déjà inscrit, connectez-vous' | trans }}</a>
                             </div>
                         </div>
                     </div>
