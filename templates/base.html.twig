@@ -5,21 +5,23 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('css/bootstrap-4/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{ asset('css/projet.css')}}" />
-        <link rel="myscripts.js" href="{{ asset('js/bootstrap-4/bootstrap.min.js')}}" />
+{#        <link rel="myscripts.js" href="{{ asset('js/bootstrap-4/bootstrap.min.js')}}" />#}
 
-        <link href="{{ asset ("css/bootstrap4/bootstrap.min.css")}}" rel="stylesheet" type="text/css">
-        <link href="{{ asset ("css/projet.css")}}" rel="stylesheet" type="text/css">
-        <link href="{{ asset ("css/fontawsome-5.all.min.css")}}" rel="stylesheet" type="text/css">
-        <script src="{{ asset ("js/jquery/jquery.slim.min.js")}}"></script>
-        <script src="{{ asset ("js/bootstrap/bootstrap.min.js")}}"></script>
+{#        <script src="{{ asset ("js/jquery/jquery.slim.min.js")}}"></script>#}
+{#        <link href="{{ asset ("css/fontawsome-5.all.min.css")}}" rel="stylesheet" type="text/css">#}
+{#        <script src="{{ asset ("js/bootstrap/bootstrap.min.js")}}"></script>#}
 
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {%  include 'navbar.html.twig' %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block script %}{% endblock %}
+        {% block javascripts %}
+        {% endblock %}
     </body>
+{#    <script src="{{ asset ("js/jquery/jquery.slim.min.js")}}"></script>#}
+{#    <script src="{{ asset ("js/bootstrap/bootstrap.min.js")}}"></script>#}
 </html>
 
 

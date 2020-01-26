@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Usager;
+use App\Entity\Commande;
 use App\Form\UsagerType;
 use App\Repository\UsagerRepository;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -37,7 +38,6 @@ class UsagerController extends AbstractController
 
     public function monCompte(UsagerRepository $usagerRepository, SessionInterface $session): Response
     {
-
         return $this->render('usager/myAccount.html.twig', [
             'usager' => $this->getUser(),
         ]);

@@ -9,9 +9,14 @@
             <div class="col-md-6">
                 <div class="main-div">
                     <div class="card col-md-12">
+                        <h2>{{ 'Mon compte' | trans }}</h2>
                         <p> Nom : {{ usager.prenom }}</p>
                         <p> Prénom : {{ usager.nom }}</p>
                         <p> Email : {{ usager.email }}</p>
+{#                        {% for commande in commandes %}
+                            <p> Nom : {{ commande.id }}</p>
+
+                        {% endfor %}#}
                     </div>
                 </div>
             </div>
