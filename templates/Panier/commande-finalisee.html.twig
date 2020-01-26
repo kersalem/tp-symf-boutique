@@ -2,11 +2,11 @@
 
 {% block body %}
 
-    <h1 class="mt-4">Commande validée</h1>
+    <h1 class="mt-4">{{ 'Commande validée' | trans }}</h1>
     {% if commande != null %}
-        <p class="mt-4">Nous traitons votre demande dans les plus bbref délais</p>
+        <p class="mt-4">{{ 'Nous traiterons votre demande dans les plus brefs délais.' | trans }}</p>
         <p class="mt-4">{{ commande.id }}</p>
-        <p class="mt-4">Boutique.com vous remercie de votre commande</p>
+        <p class="mt-4">{{ 'Boutique.com vous remercie de votre commande' | trans }}</p>
     {% endif %}
 
 {% endblock %}

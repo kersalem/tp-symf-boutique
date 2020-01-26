@@ -6,8 +6,124 @@
     </header>
     <body>
       <trans-unit id="6a3LuNk" resname="Ma boutique.com">
-        <source>default.home.title</source>
+        <source>Ma boutique.com</source>
         <target>My shop</target>
+      </trans-unit>
+      <trans-unit id="K7iKgAf" resname="Boutique">
+        <source>Boutique</source>
+        <target>Shop</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="Ok7Ezbm" resname="Panier">
+        <source>Panier</source>
+        <target>Basket</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Registration</target>
+      </trans-unit>
+      <trans-unit id="KPRXHyi" resname="Mon compte">
+        <source>Mon compte</source>
+        <target>My account</target>
+      </trans-unit>
+      <trans-unit id="9fLGXGO" resname="Gestion catégories">
+        <source>Gestion catégories</source>
+        <target>Category management</target>
+      </trans-unit>
+      <trans-unit id="aaA3KLc" resname="Gestion produits">
+        <source>Gestion produits</source>
+        <target>Product management</target>
+      </trans-unit>
+      <trans-unit id="BPiZbad" resname="user">
+        <source>user</source>
+        <target>User</target>
+      </trans-unit>
+      <trans-unit id="QLeNDdM" resname="Retour à la liste">
+        <source>Retour à la liste</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="oNPbLwg" resname="Produit">
+        <source>Produit</source>
+        <target>Product</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="zVuDKsX" resname="Libellé">
+        <source>Libellé</source>
+        <target>Libelle</target>
+      </trans-unit>
+      <trans-unit id="u7C9X.V" resname="Texte">
+        <source>Texte</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="X3hXiYa" resname="Visuel">
+        <source>Visuel</source>
+        <target>Visuel</target>
+      </trans-unit>
+      <trans-unit id="VMMk9sE" resname="Prix">
+        <source>Prix</source>
+        <target>Price</target>
+      </trans-unit>
+      <trans-unit id="IumSuye" resname="Editer">
+        <source>Editer</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="rd3IWT8" resname="Boutique : 3 Rayon(s)">
+        <source>Boutique : 3 Rayon(s)</source>
+        <target>Section</target>
+      </trans-unit>
+      <trans-unit id=".vZrSeb" resname="Produit en lien">
+        <source>Produit en lien</source>
+        <target>Related Product</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>User</target>
+      </trans-unit>
+      <trans-unit id="QNN6hxT" resname="Article(s)">
+        <source>Article(s)</source>
+        <target>Article(s)</target>
+      </trans-unit>
+      <trans-unit id="kL8kWI8" resname="Passer la Commande">
+        <source>Passer la Commande</source>
+        <target>Placing the Order</target>
+      </trans-unit>
+      <trans-unit id="jHLW5RZ" resname="Continuer les Courses">
+        <source>Continuer les Courses</source>
+        <target>Continue Races</target>
+      </trans-unit>
+      <trans-unit id="olio7wM" resname="Quantité">
+        <source>Quantité</source>
+        <target>Quantity</target>
+      </trans-unit>
+      <trans-unit id="I7aqOv2" resname="Total/produit">
+        <source>Total/produit</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="7XW1rod" resname="Validated order">
+        <source>Commande validée</source>
+        <target>Validated order</target>
+      </trans-unit>
+      <trans-unit id="Yan2u78" resname="Nous traiterons votre demande dans les plus brefs délais.">
+        <source>Nous traiterons votre demande dans les plus brefs délais.</source>
+        <target>We will process your request as soon as possible.</target>
+      </trans-unit>
+      <trans-unit id="icDKLD7" resname="Boutique.com vous remercie de votre commande">
+        <source>Boutique.com vous remercie de votre commande</source>
+        <target>Boutique.com thanks you for your order</target>
       </trans-unit>
     </body>
   </file>

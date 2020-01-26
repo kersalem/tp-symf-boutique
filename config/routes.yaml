@@ -4,7 +4,7 @@ index:
     requirements:
         _locale: '%app.supported_locales%'
     defaults:
-        _locale: 'en'
+        _locale: 'fr'
 
 contact:
     path: /{_locale}/contact
@@ -25,22 +25,42 @@ boutique:
 categorie:
     path: /{_locale}/admin/categorie_index
     controller: App\Controller\CategorieController:index
+    requirements:
+      _locale: '%app.supported_locales%'
+    defaults:
+      _locale: 'fr'
 
 categorie_edit:
     path: /{_locale}/admin/categorie_edit/{id}
     controller: App\Controller\CategorieController:edit
+    requirements:
+      _locale: '%app.supported_locales%'
+    defaults:
+      _locale: 'fr'
 
 categorie_new:
     path: /{_locale}/admin/categorie_new
     controller: App\Controller\CategorieController:new
+    requirements:
+      _locale: '%app.supported_locales%'
+    defaults:
+      _locale: 'fr'
 
 categorie_show:
     path: /{_locale}/admin/categorie_show/{id}
     controller: App\Controller\CategorieController:show
+    requirements:
+      _locale: '%app.supported_locales%'
+    defaults:
+      _locale: 'fr'
 
 categorie_delete:
     path: /{_locale}/admin/categorie_delete/{id}
     controller: App\Controller\CategorieController:delete
+    requirements:
+      _locale: '%app.supported_locales%'
+    defaults:
+      _locale: 'fr'
 
 produits:
     path: /{_locale}/produits/{idCategory}
@@ -53,38 +73,58 @@ produits:
 produit:
   path: /{_locale}/admin/produit_index
   controller: App\Controller\ProduitController:index
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: 'fr'
 
 produit_edit:
   path: /{_locale}/admin/produit_edit/{id}
   controller: App\Controller\ProduitController:edit
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: 'fr'
 
 produit_new:
   path: /{_locale}/admin/produit_new
   controller: App\Controller\ProduitController:new
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: 'fr'
 
 produit_show:
   path: /{_locale}/admin/produit_show/{id}
   controller: App\Controller\ProduitController:show
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: 'fr'
 
 produit_delete:
   path: /{_locale}/admin/produit_delete/{id}
   controller: App\Controller\ProduitController:delete
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: 'fr'
 
-testDeBourin:
-    path: /{_locale}/test
-    controller:  App\Controller\DefaultController::testDeBourin
-    requirements:
-        _locale: '%app.supported_locales%'
-    defaults:
-        _locale: 'fr'
+#testDeBourin:
+#    path: /{_locale}/test
+#    controller:  App\Controller\DefaultController::testDeBourin
+#    requirements:
+#        _locale: '%app.supported_locales%'
+#    defaults:
+#        _locale: 'fr'
 
-searchProduits:
-    path: /{_locale}/produits/{search}
-    controller: App\Controller\BoutiqueController::searchProduits
-    requirements:
-        _locale: '%app.supported_locales%'
-    defaults:
-        _locale: 'fr'
+#searchProduits:
+#    path: /{_locale}/produits/{search}
+#    controller: App\Controller\BoutiqueController::searchProduits
+#    requirements:
+#        _locale: '%app.supported_locales%'
+#    defaults:
+#        _locale: 'fr'
 
 panier:
     path: /{_locale}/panier
@@ -118,7 +158,6 @@ supprimerLigne:
     defaults:
         _locale: 'fr'
 
-
 supprimer:
    path: /{_locale}/panier/suppressionPanier
    controller: App\Controller\PanierController::supprimerPanier
@@ -126,7 +165,6 @@ supprimer:
        _locale: '%app.supported_locales%'
    defaults:
        _locale: 'fr'
-
 
 usager_accueil:
     path: /{_locale}/usager
