@@ -19,6 +19,7 @@ class UsagerController extends AbstractController
 {
 
     const USAGER_SESSION = 'usager';
+
     public function index(UsagerRepository $usagerRepository, SessionInterface $session): Response
     {
         $idUserSession = $session->get(self::USAGER_SESSION);
@@ -31,6 +32,14 @@ class UsagerController extends AbstractController
         return $this->render('usager/index.html.twig', [
             'usager' => $usager,
             'usagers' => $usagers,
+        ]);
+    }
+
+    public function monCompte(UsagerRepository $usagerRepository, SessionInterface $session): Response
+    {
+
+        return $this->render('usager/myAccount.html.twig', [
+            'usager' => $this->getUser(),
         ]);
     }
 
@@ -68,16 +77,11 @@ class UsagerController extends AbstractController
             $entityManager->persist($usager);
             $entityManager->flush();
 
-
             $id = $usager->getId();
             $session->set(self::USAGER_SESSION, $id);
-
-          /*  dump($usager);
-            exit;*/
-
+            dump($usager);
 
             return $this->redirectToRoute('usager_accueil');
-
         }
 
         return $this->render('usager/new.html.twig', [
