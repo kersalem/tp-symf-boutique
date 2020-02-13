@@ -94,7 +94,7 @@ class PanierService {
     }
 
 
-    // vider vide complètement le panier
+    // vider complètement le panier
     public function vider() {
         $this->panier = [];
         $this->session->set(self::PANIER_SESSION, $this->panier);
@@ -125,9 +125,7 @@ class PanierService {
                 $this->em->flush();
                 $this->vider();
 
-                // $this->logger->debug('8888888888888');
                 return $commande;
-
             }
         }
 }

@@ -71,7 +71,7 @@ class PanierController extends AbstractController
         $commande = null;
 
         if(! $this->isGranted('ROLE_CLIENT')){
-            return $this->redirectToRoute('panier');
+            return $this->redirectToRoute('app_login');
         }
 
         if($id != null) {
